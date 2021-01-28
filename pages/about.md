@@ -10,6 +10,6 @@ title: 关于我
 linux k8s ansible git jenkins python shell
 
 # 联系我
-QQ    : 1315984007
-Email : liuyuexizhi@qq.com
-GitHub: https://github.com/liuyuexizhi
++ QQ    : 1315984007
++ Email : liuyuexizhi@qq.com
++ GitHub: https://github.com/liuyuexizhi
