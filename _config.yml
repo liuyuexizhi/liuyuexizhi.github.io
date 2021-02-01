@@ -8,12 +8,12 @@ author: Travis
 footerText: ''
 
 # 这些不要动
-permalink: /posts/:year/:month/:day/:title.html
+permalink: /imgs/:year/:month/:day/:title.html
 kramdown:
   auto_ids: true
   input: GFM
   syntax_highlighter: rouge
-toc_levels: 1......6
+  toc_levels: 1..6
 exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh']
 
 # 域名配置
@@ -56,31 +56,9 @@ extBaidu: false
 # 数学公式支持，比较影响加载速度,不需要请设置为false
 extMath: false
 
-# 友情链接
-# links:
-#   - title: 文科中的技术宅
-#     url: https://www.townwang.com
-#   - title: Auuu Nya Blog
-#     url: http://mu1er.cn
-#   - title: 春风十里
-#     url: https://www.geek-era.com
-#   - title: 阿川的个人博客
-#     url: https://achuan.io
-#   - title: 魏文成博客
-#     url: https://www.wwc.ren
-#   - title: 06m
-#     url: https://www.06m.me
-#   - title: 达达知识
-#     url: https://www.dadapush.com
-#   - title: 祈雨的博客
-#     url: https://wakzz.cn
-#   - title: hongCYu’s Blog
-#     url: https://hongcyu.cn
-#   - title: Sorryfu - 分享技术，记录生活
-#     url: https://sorryfu.top
-#   - title: 简单的人生笔记
-#     url: https://yoyling.com
-#   - title: oneNeko的博客
-#     url: https://blog.oneneko.com
-#   - title: Py的Blogggg
-#     url: https://blog.pyliubaolin.top
+defaults:
+  - 
+    scope:
+      path: "" # 一个空的字符串代表项目中所有的文件
+    values:
+      layout: "mypost"
