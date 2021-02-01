@@ -167,3 +167,9 @@
     margin: 15px 0;
   }
 }
+
+#markdown-toc>li:first-child{display:none}
+#markdown-toc>li {
+  font-family: inherit;
+  font-size: 14px;  
+}

@@ -13,6 +13,7 @@ kramdown:
   auto_ids: true
   input: GFM
   syntax_highlighter: rouge
+toc_levels: 1......6
 exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh']
 
 # 域名配置
@@ -27,10 +28,10 @@ tucaoUrl: https://github.com/liuyuexizhi/liuyuexizhi.github.io/issues
 menu:
   - title: 首页
     url: /
-  - title: 归类
-    url: /pages/categories.html
   - title: 搜索
     url: /pages/search.html
+  - title: 归类
+    url: /pages/categories.html
   #- title: 友链
   #  url: /pages/links.html
   - title: 留言
