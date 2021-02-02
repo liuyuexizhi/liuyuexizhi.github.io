@@ -135,12 +135,15 @@
 }
 .page-post th {
   font-weight: bold;
+  background-color: #ececec;
 }
 .page-post th,
 .page-post td {
   padding: 5px 10px;
   text-align: left;
+  border-left: 1px solid #dddddd;
 }
+
 .page-post table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -155,6 +158,9 @@
 }
 .page-post .table-container table tbody tr:last-child {
   border-bottom: 0;
+}
+.page-post .table-container {
+  border-left: 0;
 }
 @media screen and (max-width: 560px) {
   .page-post {
@@ -173,3 +179,4 @@
   font-family: inherit;
   font-size: 14px;  
 }
+

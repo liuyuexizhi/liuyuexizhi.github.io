@@ -1,13 +1,6 @@
 ---
-title: Prometheus监控体系探索
 categories: [Prometheus, 监控]
 ---
-
-## 目录
-+ this is a toc line
-{:toc}
-
-{% raw %}
 
 # 整体架构
 ![整体架构图](整体架构图.png)
@@ -175,7 +168,7 @@ groups:
 # annotations 可以用来存储更长的标签信息，并且可以使用 templated。
 #
 # Templating
-## ${labels} 存储标签键值对，可以使用 {{ $labels.\<labelname\> }} 来获取某个标签的值
+## ${labels} 存储标签键值对，可以使用 {{ $labels.<labelname> }} 来获取某个标签的值
 ## ${value} 存储 expr 计算出来的值
 
 groups:
@@ -239,7 +232,7 @@ sum(http_requests_total) by (instance,job)
 # without 用于结果不保留标签
 
 # 操作符
-== (相等)  != (不相等)  > (大于)  \< (小于)  \>= (大于等于)  <= (小于等于)
+== (相等)  != (不相等)  > (大于)  < (小于)  >= (大于等于)  <= (小于等于)
 and（并且）  or（或者）  unless（排除）
 
 # 聚合操作符：
@@ -337,8 +330,8 @@ POST /-/reload
 ### routes: 子路由
 #
 ## inhibit_rules: 静音规则
-### source_match\<_re\>: 源标签
-### target_match\<_re\>: 目标标签
+### source_match<_re>: 源标签
+### target_match<_re>: 目标标签
 ### equal: 比较相等的标签值（相等则静音源标签）
 #
 ## receivers
@@ -382,4 +375,3 @@ receivers:
 功能处理流程
 
 ![功能处理流程](运维消息处理系统-功能处理流程.png)
-{% endraw %}
