@@ -11,9 +11,11 @@ if test "$1" = "run"; then
 elif test "$1" = "build"; then
   bundle exec jekyll build --destination=dist
 elif test "$1" = "deploy"; then
+  echo "#####################$(date +"%Y-%m-%d-%H:%M:%S")###########################"
   bundle exec jekyll build --destination=dist
   bash src/format.sh
   git pull && git add -A && git commit -m 'auto push' && git push
+  echo "################################################"
 else
   echo "error param"
 fi
