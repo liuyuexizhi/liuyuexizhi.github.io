@@ -15,7 +15,7 @@ elif test "$1" = "deploy"; then
   bundle exec jekyll build --destination=dist
   bash src/format.sh
   git pull && git add -A && git commit -m 'auto push' && git push
-  echo "################################################"
+  echo -e "####################################################################\n\n"
 else
   echo "error param"
 fi
