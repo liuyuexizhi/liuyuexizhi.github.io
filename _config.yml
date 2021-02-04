@@ -8,7 +8,7 @@ author: Travis
 footerText: ''
 
 # 这些不要动
-permalink: /imgs/:year/:month/:day/:title.html
+permalink: /posts_imgs/:year/:month/:day/:title.html
 kramdown:
   auto_ids: true
   input: GFM
