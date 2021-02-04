@@ -8,7 +8,7 @@
 
 本博客地址：[TravisBlog](https://liuyuexizhi.github.io/)
 
-以下是原仓库内容，个人添加了src目录来作为上传文件入口，以及在blog.sh脚本deploy参数中添加了自动处理文章和资源文件的脚本。
+以下是原仓库内容，个人添加了src目录来作为上传文件入口，以及在 `blog.sh` 脚本 `deploy` 参数中添加了自动处理文章和资源文件的脚本。
 
 # 本地运行
 
