@@ -7,8 +7,18 @@ if test "$1" = "run"; then
   if [ $2 ]; then
     port=$2
   fi
+  bash src/format.sh
+  bundle exec jekyll serve --watch --host=0.0.0.0 --port=$port
+elif test "$1" = "runnew"; then
+  port=8080
+  if [ $2 ]; then
+    port=$2
+  fi
+  rm -f src/md5sum.txt
+  bash src/format.sh
   bundle exec jekyll serve --watch --host=0.0.0.0 --port=$port
 elif test "$1" = "build"; then
+  bash src/format.sh
   bundle exec jekyll build --destination=dist
 elif test "$1" = "deploy"; then
   echo "#####################$(date +"%Y-%m-%d-%H:%M:%S")###########################"

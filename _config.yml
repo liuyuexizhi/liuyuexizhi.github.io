@@ -12,6 +12,7 @@ permalink: /posts_imgs/:year/:month/:day/:title.html
 kramdown:
   auto_ids: true
   input: GFM
+  hard_wrap: false
   syntax_highlighter: rouge
   toc_levels: 1..6
 exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh', 'src']
