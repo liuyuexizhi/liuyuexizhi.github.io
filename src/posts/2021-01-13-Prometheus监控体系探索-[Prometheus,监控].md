@@ -1,7 +1,3 @@
----
-categories: [Prometheus, 监控]
----
-
 # 整体架构
 ![整体架构图](整体架构图.png)
 

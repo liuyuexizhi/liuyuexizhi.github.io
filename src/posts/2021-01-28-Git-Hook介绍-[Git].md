@@ -1,7 +1,3 @@
----
-categories: [Git]
----
-
 ## Git hook
 两种 hook 方式
 + 客户端 hook

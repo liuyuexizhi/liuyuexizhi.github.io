@@ -6,6 +6,7 @@ md5_file='md5sum.txt'
 function md5_clear()
 {
     # 检查记录的文件是否被删除
+    [ -f ${md5_file} ] || touch ${md5_file}
     for ff in $(awk '{print $2}' ${md5_file})
     do
         if [[ -f ${ff} ]]
@@ -32,16 +33,15 @@ function md5_clear()
 function md5_tool()
 {
     the_file=$1
-    [ -f ${md5_file} ] || touch ${md5_file}
-    if [[ $(grep ${the_file} ${md5_file}) ]]
+    if [[ $(grep -F ${the_file} ${md5_file}) ]]
     then
         md5_new=$(md5sum ${the_file} | awk '{print $1}')
-        md5_old=$(grep ${the_file} ${md5_file} | awk '{print $1}')
+        md5_old=$(grep -F ${the_file} ${md5_file} | awk '{print $1}')
         if [[ ${md5_new} == ${md5_old} ]]
         then
             return 0
         else
-            sed -i "s@${md5_old}@${md5_old}@"  ${md5_file}
+            sed -i "s@${md5_old}@${md5_new}@"  ${md5_file}
             return 1
         fi
     else
@@ -58,19 +58,23 @@ function handle_post()
     do
         md5_tool ${post}
         [[ $? == 0 ]] && continue
-        post_file=$(basename ${post})
-        temp_str=${post_file:11}
-        this_title=${temp_str%.*}
-        target_name="../_posts/${post_file}"
+        fullname=$(basename ${post})
+        tag=$(echo ${fullname} | grep -Eo '\[.*\]')
+        thisfile=$(echo ${fullname} | sed "s@-\[.*\]@@")
+        thistitle=$(echo ${thisfile} | sed "s@\.md@@" | awk -F '-' '{$1="";$2="";$3="";print}' | xargs echo -n | tr ' ' '-')
+        topath="../_posts/${thisfile}"
 
-        [[ -f ${target_name} ]] && rm -fv ${target_name}
+        [[ -f ${topath} ]] && rm -fv ${topath}
 
-        echo "=====Format[Posts]:: ${post_file} ====="
-        sed -e "4 a ## 目录\n+ this is a toc line\n{:toc}\n" \
-            -e "4 a {% raw %}\n" \
+        echo "=====Format[Posts]:: ${thisfile} ====="
+        sed -e "1 i ---\ncategories: ${tag}\ntitle: ${thistitle}\n---\n\n## 目录\n+ this is a toc line\n{:toc}\n\n{% raw %}\n" \
             -e "$ a {% endraw %}" \
-            -e "1 a title: ${this_title}" \
-            -e "s/<\(.*\)>/\\\<\1\\\>/" ${post} > ${target_name}
+            -e "s/<\(.*\)>/\\\<\1\\\>/" ${post} > ${topath}
+        # sed -e "4 a ## 目录\n+ this is a toc line\n{:toc}\n" \
+        #     -e "4 a {% raw %}\n" \
+        #     -e "$ a {% endraw %}" \
+        #     -e "1 a title: ${this_title}" \
+        #     -e "s/<\(.*\)>/\\\<\1\\\>/" ${post} > ${topath}
     done
 }
 
@@ -83,17 +87,16 @@ function handle_imag()
         md5_tool ${each}
         [[ $? == 0 ]] && continue
         full_name=$(basename ${each})
-        temp_str=${full_name:11}
-        img=${temp_str#*-}
-        img_date=${full_name:0:10}
-        img_path="../posts_imgs/$(echo ${img_date} | tr '-' '/')"
-        target_name="${img_path}/${img}"
+        arr_name=$(echo ${full_name} | tr '-' ' ')
+        img_name=$(echo ${arr_name} | awk '{print $NF}')
+        img_path="../posts_imgs/$(echo ${arr_name} | awk '{print $1"/"$2"/"$3}')"
+        target="${img_path}/${img_name}"
 
-        [[ -f ${target_name} ]] && rm -fv ${target_name}
+        [[ -f ${target} ]] && rm -fv ${target}
 
         echo "=====Format[Images]:: ${full_name} ====="
         [[ -d "${img_path}" ]] || mkdir -p ${img_path}         
-        cp -f "${each}" "${target_name}"
+        cp -f "${each}" "${target}"
     done
 }
 

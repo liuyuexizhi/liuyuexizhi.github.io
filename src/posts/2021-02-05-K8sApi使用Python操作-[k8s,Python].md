@@ -1,7 +1,3 @@
----
-categories: [k8s, Python]
----
-
 ## 介绍
 
 > k8s [官方支持](https://jimmysong.io/kubernetes-handbook/develop/client-go-sample.html) 维护 python java go 语言的客户端 api 调用

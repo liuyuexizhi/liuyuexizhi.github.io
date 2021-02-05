@@ -1,6 +1,6 @@
 ---
+categories: [Prometheus,监控]
 title: Prometheus监控体系探索
-categories: [Prometheus, 监控]
 ---
 
 ## 目录

@@ -1,6 +1,6 @@
 ---
-title: ansible-doc模式
 categories: [ansible]
+title: ansible-doc模式
 ---
 
 ## 目录

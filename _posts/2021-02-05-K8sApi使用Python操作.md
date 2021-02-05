@@ -1,6 +1,6 @@
 ---
+categories: [k8s,Python]
 title: K8sApi使用Python操作
-categories: [k8s, Python]
 ---
 
 ## 目录

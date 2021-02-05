@@ -1,7 +1,3 @@
----
-categories: [ansible]
----
-
 ## 主机组
 ### 指定用户
 ```bash
