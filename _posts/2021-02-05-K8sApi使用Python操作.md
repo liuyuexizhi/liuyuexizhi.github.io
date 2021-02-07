@@ -34,7 +34,7 @@ config.load_kube_config(config_file='kube_config_cluster.yml')
 + 通过yaml文件创建（简单）
 
 
-### 1. 通过封装方法创建
+### 通过封装方法创建
 
 ```python
 def create_job_object():
@@ -79,7 +79,7 @@ def main():
     create_job(batch_v1, job_obj)
 ```
 
-### 2. 通过yaml文件创建
+### 通过yaml文件创建
 
 **准备写好的yaml文件**
 
@@ -123,7 +123,7 @@ def main():
 ```
 
 
-### 查询 pod
+## 查询 pod
 
 **查询指定命名空间下所有pod**
 
@@ -143,7 +143,7 @@ v1 = client.CoreV1Api()
 ret = v1.list_namespaced_pod(namespace='practice', label_selector="used=false")
 ```
 
-### 更新 Pod
+## 更新 Pod
 
 > 需求：更新 label "used=true"
 
@@ -165,7 +165,7 @@ v1 = client.CoreV1Api()
     )
 ```
 
-### 删除 Job
+## 删除 Job
 
 ```python
 def delete_job(api_instance):

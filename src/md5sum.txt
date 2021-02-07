@@ -5,7 +5,7 @@ f6c395974226d68c3d46bf70be1a0eb4  ./posts/2020-03-26-Git-服务器协议-[Git].m
 3b3a8e0309dfca1a4eb75375807da53f  ./posts/2020-06-01-Git-分支-[Git].md
 b8c0939e33b2353ad87ed164d2eff669  ./posts/2021-01-13-Prometheus监控体系探索-[Prometheus,监控].md
 82eea3037f01ab3b4b6163598e3810cd  ./posts/2021-01-28-Git-Hook介绍-[Git].md
-ba7f1fc37683ff38548ebbdd49abde1f  ./posts/2021-02-05-K8sApi使用Python操作-[k8s,Python].md
+066b0ad3b5c96c407ccfe9955d611f2e  ./posts/2021-02-05-K8sApi使用Python操作-[k8s,Python].md
 2200d5159ec3a76aaac7094f29cfa2dc  ./posts/imgs/2021-01-13-Prometheus监控体系探索-整体架构图.png
 89565c198321d4e38647055d67483406  ./posts/imgs/2021-01-13-Prometheus监控体系探索-运维消息处理系统-功能处理流程.png
 799cc15821aa83d3c6808fb1cd685fbc  ./posts/imgs/2021-01-13-Prometheus监控体系探索-运维消息处理系统-功能模块.png
