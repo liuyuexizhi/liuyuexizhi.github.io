@@ -49,7 +49,7 @@
 }
 .page-post blockquote {
   border-left: 3px solid #98c379;
-  background-color: #f7f7f7;
+  background-color: #eeeeee;
   padding: 9px 9px 9px 15px;
 }
 
@@ -74,6 +74,11 @@
 .page-post ol li {
   list-style: decimal;
 }
+.page-post hr {
+  border: none;
+  height: 3px;
+  background-color: #eeeeee;
+}
 .page-post img {
   display: block;
   max-width: 100%;
@@ -89,17 +94,31 @@
   margin: 0 4px;
   line-height: 1;
 }
-.page-post pre {
-  font-size: 0;
-  padding: 10px;
+
+
+.page-post .table-container {
   overflow: auto;
-  border-radius: 2px;
   max-height: 610px;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  line-height: 1.6;
+  margin: 14px 0;
 }
+.page-post .table-container table,th,td {
+  min-width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+  padding: 5px 10px;
+  text-align: left;
+  font-family:inherit;
+}
+.page-post table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.page-post th {
+  font-weight: bold;
+  background-color: #ececec;
+} 
+
+
+
 .page-post code {
   font-size: 14px;
   background-color: #eeeeee;
@@ -110,7 +129,8 @@
   color: #d14;
   transition: all 500ms ease;
 }
-.page-post pre code {
+
+.page-post pre code pre{
   font-size: 14px;
   background-color: transparent !important;
   word-break: keep-all;
@@ -119,49 +139,17 @@
   border-radius: unset;
   color: inherit;
 }
-.page-post hr {
-  border: none;
-  height: 3px;
-  background-color: #eeeeee;
-}
-.page-post table {
-  min-width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #dddddd;
-}
-.page-post tr {
-  border-bottom: 1px solid #dddddd;
-}
-.page-post th {
-  font-weight: bold;
-  background-color: #ececec;
-}
-.page-post th,
-.page-post td {
-  padding: 5px 10px;
-  text-align: left;
-  border-left: 1px solid #dddddd;
+
+.page-post .rouge-table td:first-child{
+  width:20px;
+  color: #009999;
 }
 
-.page-post table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.page-post .rouge-table tr{
+    border: 0px solid #dddddd;
 }
-.page-post .table-container {
-  overflow: auto;
-  margin: 14px 0;
-  border: 1px solid #dddddd;
-}
-.page-post .table-container table {
-  margin: 0;
-  border: 0;
-}
-.page-post .table-container table tbody tr:last-child {
-  border-bottom: 0;
-}
-.page-post .table-container {
-  border-left: 0;
-}
+
+
 @media screen and (max-width: 560px) {
   .page-post {
     font-size: 12px;
@@ -179,4 +167,5 @@
   font-family: inherit;
   font-size: 14px;  
 }
+
 
