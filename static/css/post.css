@@ -95,11 +95,11 @@
   line-height: 1;
 }
 
-//table
 .page-post .table-container {
-  overflow: auto;
+  overflow: scroll;
   max-height: 610px;
 }
+
 .page-post .table-container th,
 .page-post .table-container tr,
 .page-post .table-container td,
@@ -119,23 +119,37 @@
   background-color: #ececec;
 } 
 
-// code
-.page-post code {
+.page-post code[class="language-plaintext highlighter-rouge"] {
   font-size: 14px;
   background-color: #eeeeee;
   word-break: break-all;
   color: #d14;
 }
-.page-post .rouge-table td:first-child{
-  width:20px;
-  color: #009999;
-  text-align: center;
+
+.page-post table[class="rouge-table"] {
+  overflow: scroll;
+  max-height: 610px;
 }
-.page-post .rouge-table,
-.page-post .rouge-table td,
-.page-post .rouge-table tr{
-    border: 1px solid #0099996b;
-    border-collapse: collapse;
+.page-post table[class="rouge-table"] td {
+  min-width: 100%;
+  border: 0px solid #0099996b;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 5px 10px;
+  font-family:inherit;
+}
+.page-post table[class="rouge-table"] td[class="rouge-gutter gl"]{
+    color: #009999;
+    text-align: center;
+    min-width: 100%;
+    padding: 3px 5px;
+}
+
+
+.page-post div>pre {
+    overflow: auto;
+    max-width: inherit;
+    max-height: 610px;
 }
 
 
