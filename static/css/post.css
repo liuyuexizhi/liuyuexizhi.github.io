@@ -120,7 +120,7 @@
 } 
 
 // code
-.page-post .language-plaintext.highlighter-rouge {
+.page-post code {
   font-size: 14px;
   background-color: #eeeeee;
   word-break: break-all;
@@ -134,7 +134,8 @@
 .page-post .rouge-table,
 .page-post .rouge-table td,
 .page-post .rouge-table tr{
-    border: 1px solid red;
+    border: 1px solid #0099996b;
+    border-collapse: collapse;
 }
 
 
