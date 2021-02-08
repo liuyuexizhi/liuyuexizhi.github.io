@@ -95,15 +95,15 @@
   line-height: 1;
 }
 
-.page-post .table-container {
+.page-post div[class="post"]>.table-container {
   overflow: scroll;
-  max-height: 610px;
+  max-height: 600px;
 }
 
-.page-post .table-container th,
-.page-post .table-container tr,
-.page-post .table-container td,
-.page-post .table-container table {
+.page-post div[class="post"]>.table-container th,
+.page-post div[class="post"]>.table-container tr,
+.page-post div[class="post"]>.table-container td,
+.page-post div[class="post"]>.table-container table {
   min-width: 100%;
   border-collapse: collapse !important;
   border: 1px solid #dddddd;
@@ -111,10 +111,10 @@
   text-align: left;
   font-family:inherit;
 }
-.page-post table tr:nth-child(even) {
+.page-post div[class="post"]>.table-container tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-.page-post .table-container th {
+.page-post div[class="post"]>.table-container th {
   font-weight: bold;
   background-color: #ececec;
 } 
@@ -125,31 +125,42 @@
   word-break: break-all;
   color: #d14;
 }
+.page-post code[class="highlighter-rouge"] {
+  font-size: 14px;
+  background-color: #eeeeee;
+  word-break: break-all;
+  color: #d14;
+}
+.page-post code[class="language-plaintext"] {
+  font-size: 14px;
+  background-color: #eeeeee;
+  word-break: break-all;
+  color: #d14;
+}
 
-.page-post table[class="rouge-table"] {
-  overflow: scroll;
-  max-height: 610px;
+.page-post code>.table-container {
+    overflow: scroll;
+    max-height: 600px;
+}
+.page-post table[class="rouge-table"]{
+/*   border:1px solid #0099996b; */
+  border-collapse: collapse;
+  min-width: 100%;
+  font-family: inherit;
+  word-wrap: break-word;
+  word-break: break-all;
+  table-layout：fixed;
 }
 .page-post table[class="rouge-table"] td {
-  min-width: 100%;
-  border: 0px solid #0099996b;
-  border-collapse: collapse;
   text-align: left;
   padding: 5px 10px;
-  font-family:inherit;
+  font-family: inherit;
 }
 .page-post table[class="rouge-table"] td[class="rouge-gutter gl"]{
     color: #009999;
     text-align: center;
-    min-width: 100%;
     padding: 3px 5px;
-}
-
-
-.page-post div>pre {
-    overflow: auto;
-    max-width: inherit;
-    max-height: 610px;
+    width: 5% ;
 }
 
 
@@ -170,3 +181,4 @@
   font-family: inherit;
   font-size: 14px;  
 }
+

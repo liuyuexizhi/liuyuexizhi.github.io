@@ -18,13 +18,20 @@ function md5_clear()
             sed -i "/${fname}/d" ${md5_file}
             if [[ ${suffix} == 'md' ]]
             then
-                rm -fv ../_posts/${fname}
+                thisfile=$(echo ${fname} | sed "s@-\[.*\]@@")
+                topath="../_posts/${thisfile}"
+                rm -fv ${topath}
             else
-                temp_str=${fname:11}
-                img=${temp_str#*-}
-                img_date=${fname:0:10}
-                img_path="../posts_imgs/$(echo ${img_date} | tr '-' '/')"
-                rm -fv ${img_path}/${img}
+                fullname=$(basename ${each})
+                arr_name=($(echo ${fullname} | tr '-' ' '))
+                img_path="../posts_imgs/$(echo ${arr_name[@]} | awk '{print $1"/"$2"/"$3}')"
+                for i in $(seq 0 3)
+                do
+                    unset arr_name[i]
+                done
+                img_name=$(echo ${arr_name[@]} | tr ' ' '-')
+                target="${img_path}/${img_name}"
+                rm -fv ${target}
             fi
         fi
     done
@@ -86,15 +93,19 @@ function handle_imag()
     do
         md5_tool ${each}
         [[ $? == 0 ]] && continue
-        full_name=$(basename ${each})
-        arr_name=$(echo ${full_name} | tr '-' ' ')
-        img_name=$(echo ${arr_name} | awk '{print $NF}')
-        img_path="../posts_imgs/$(echo ${arr_name} | awk '{print $1"/"$2"/"$3}')"
+        fullname=$(basename ${each})
+        arr_name=($(echo ${fullname} | tr '-' ' '))
+        img_path="../posts_imgs/$(echo ${arr_name[@]} | awk '{print $1"/"$2"/"$3}')"
+        for i in $(seq 0 3)
+        do
+            unset arr_name[i]
+        done
+        img_name=$(echo ${arr_name[@]} | tr ' ' '-')
         target="${img_path}/${img_name}"
 
         [[ -f ${target} ]] && rm -fv ${target}
 
-        echo "=====Format[Images]:: ${full_name} ====="
+        echo "=====Format[Images]:: ${fullname} ====="
         [[ -d "${img_path}" ]] || mkdir -p ${img_path}         
         cp -f "${each}" "${target}"
     done

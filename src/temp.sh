@@ -1,10 +1,14 @@
 #!bin/bash
-
-for each in $(find ./posts -type f -name '*.md')
+for each in $(find ./posts/imgs -type f)
 do
-    fullname=$(basename ${each})
-    tag=$(echo ${fullname} | grep -Eo '\[.*\]')
-    thisfile=$(echo ${fullname} | sed "s@-\[.*\]@@")
-    topath="../_posts/${thisfile}"
-    echo ${topath}
+    full_name=$(basename ${each})
+    arr_name=($(echo ${full_name} | tr '-' ' '))
+    img_path="../posts_imgs/$(echo ${arr_name[@]} | awk '{print $1"/"$2"/"$3}')"
+    for i in $(seq 0 3)
+    do
+        unset arr_name[i]
+    done
+    img_name=$(echo ${arr_name[@]} | tr ' ' '-')
+    target="${img_path}/${img_name}"
+    echo ${target}    
 done

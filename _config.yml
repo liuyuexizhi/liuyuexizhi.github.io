@@ -17,6 +17,7 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+      start_line: 01
   toc_levels: 1..6
 exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh', 'src']
 
