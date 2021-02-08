@@ -416,3 +416,41 @@ blog.addLoadEvent(function () {
   })
 })
 
+// 序号补零替换 
+blog.addLoadEvent(function () {
+    var list = document.querySelectorAll('.lineno')
+    list.forEach(function(item) {
+      new_text=''
+      var arr_item = item.innerText.split('\n')
+      for(let x of arr_item) {
+        if(x == '') {
+          continue
+        }
+        if(x.length == 1) {
+          if(new_text == ''){
+            new_text = '0' + x
+          }
+          else {
+            new_text += '\n0' + x
+          }
+        }
+        else {
+          new_text += '\n' + x
+        }
+      }
+      item.innerText = new_text
+    })
+})
+
+// 添加代码复制
+//blog.addLoadEvent(function () {
+//    var list = document.querySelectorAll('.rouge-table')
+//    list.forEach(function(item) {
+//       var tempNode = document.createElement('span')
+//       tempNode.setAttribute('align', 'right');
+//       tempNode.innerText = 'test'
+//       //var f_tbody = item.getElementsByTagName('tbody')[0]
+//       item.getRootNode.insertBefore(tempNode, item.getRootNode)
+//    })
+//})
+

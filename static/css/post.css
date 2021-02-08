@@ -143,7 +143,7 @@
     max-height: 600px;
 }
 .page-post table[class="rouge-table"]{
-/*   border:1px solid #0099996b; */
+  border:1px solid #0099996b;
   border-collapse: collapse;
   min-width: 100%;
   font-family: inherit;
@@ -152,6 +152,7 @@
   table-layout：fixed;
 }
 .page-post table[class="rouge-table"] td {
+  border:1px solid #0099996b;
   text-align: left;
   padding: 5px 10px;
   font-family: inherit;
