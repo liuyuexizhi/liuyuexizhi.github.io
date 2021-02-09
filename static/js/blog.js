@@ -444,13 +444,14 @@ blog.addLoadEvent(function () {
 
 // 添加代码复制
 //blog.addLoadEvent(function () {
-//    var list = document.querySelectorAll('.rouge-table')
+//    var list = document.querySelectorAll('.highlighter-rouge')
 //    list.forEach(function(item) {
 //       var tempNode = document.createElement('span')
 //       tempNode.setAttribute('align', 'right');
 //       tempNode.innerText = 'test'
-//       //var f_tbody = item.getElementsByTagName('tbody')[0]
-//       item.getRootNode.insertBefore(tempNode, item.getRootNode)
+//       var f_code = item.getElementsByClassName('table-container')[0]
+//       var f_table = item.getElementsByTagName('table')[0]
+//       f_code.insertBefore(tempNode, f_table)
 //    })
 //})
 
