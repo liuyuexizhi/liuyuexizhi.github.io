@@ -76,7 +76,10 @@ function handle_post()
         echo "=====Format[Posts]:: ${thisfile} ====="
         sed -e "1 i ---\ncategories: ${tag}\ntitle: ${thistitle}\n---\n\n## 目录\n+ this is a toc line\n{:toc}\n\n{% raw %}\n" \
             -e "$ a {% endraw %}" \
-            -e "s/<\(.*\)>/\\\<\1\\\>/" ${post} > ${topath}
+            -e "s/<\(.*\)>/\\\<\1\\\>/" \
+            -e 's@\(\[.*\]([0-9]*-[0-9]*-[0-9]*-.*\)\(-\[.*\]*\).md)@\1.md)@' \
+            -e 's@\[.*\](\([0-9]*\)-\([0-9]*\)-\([0-9]*\)-\(.*\).md)@\[\4.md\](../../../\1/\2/\3/\4.html)@' \
+            ${post} > ${topath}
         # sed -e "4 a ## 目录\n+ this is a toc line\n{:toc}\n" \
         #     -e "4 a {% raw %}\n" \
         #     -e "$ a {% endraw %}" \
