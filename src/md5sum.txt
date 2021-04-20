@@ -5,7 +5,6 @@ c54194788b2623d0501454c292b0db05  ./posts/2020-02-18-iptables策略路由-[Linux
 fb527eba898c812ed71c121b7ea8b799  ./posts/2020-03-23-Git-基础-[Git].md
 f6c395974226d68c3d46bf70be1a0eb4  ./posts/2020-03-26-Git-服务器协议-[Git].md
 3b3a8e0309dfca1a4eb75375807da53f  ./posts/2020-06-01-Git-分支-[Git].md
-0c3fb5eed85fafe5c817a2d64a26a1d6  ./posts/2020-12-30-2020精选文章-[精选文章].md
 b8c0939e33b2353ad87ed164d2eff669  ./posts/2021-01-13-Prometheus监控体系探索-[Prometheus,监控].md
 82eea3037f01ab3b4b6163598e3810cd  ./posts/2021-01-28-Git-Hook介绍-[Git].md
 066b0ad3b5c96c407ccfe9955d611f2e  ./posts/2021-02-05-K8sApi使用Python操作-[k8s,Python].md

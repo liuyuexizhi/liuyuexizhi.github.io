@@ -15,7 +15,7 @@ function md5_clear()
         else
             fname=$(basename ${ff})
             suffix=${fname##*.}
-            sed -i "/${fname}/d" ${md5_file}
+            grep -F ${fname} ${md5_file} | awk '{print $1}' | xargs -i sed -i "/{}/d" ${md5_file}
             if [[ ${suffix} == 'md' ]]
             then
                 thisfile=$(echo ${fname} | sed "s@-\[.*\]@@")
