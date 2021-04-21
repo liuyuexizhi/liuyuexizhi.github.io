@@ -11,3 +11,5 @@ b8c0939e33b2353ad87ed164d2eff669  ./posts/2021-01-13-Prometheus监控体系探�
 2200d5159ec3a76aaac7094f29cfa2dc  ./posts/imgs/2021-01-13-Prometheus监控体系探索-整体架构图.png
 89565c198321d4e38647055d67483406  ./posts/imgs/2021-01-13-Prometheus监控体系探索-运维消息处理系统-功能处理流程.png
 799cc15821aa83d3c6808fb1cd685fbc  ./posts/imgs/2021-01-13-Prometheus监控体系探索-运维消息处理系统-功能模块.png
+2b6502df6521ca949d0e8afe72e938d8  ./posts/2020-04-21-harbor升级-[docker].md
+2b6c9f567f152c618019f043eb92188d  ./posts/2020-09-21-Jenkins扩展共享库的应用-[Jenkins].md
