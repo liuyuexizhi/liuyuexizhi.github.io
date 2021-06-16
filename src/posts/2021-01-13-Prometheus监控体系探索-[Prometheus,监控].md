@@ -274,6 +274,9 @@ eg: label_replace(up, 'host', "$1", "instance", "(.*):.*")
 label_join(v instant-vector, dst_label string, separator string, src_label_1 string, src_label_2 string, ...)
 eg: label_join(up, "test", "-", "os", "env")
 
+# 指定工作日报警
+(probe_ssl_earliest_cert_expiry- time()) / 60 / 60 / 24 < 40 and ON() day_of_week() > 0 < 6
+
 # 其他：https://prometheus.io/docs/prometheus/latest/querying/functions/
 ```
 
@@ -371,3 +374,6 @@ receivers:
 功能处理流程
 
 ![功能处理流程](运维消息处理系统-功能处理流程.png)
+
+
+![test](test.html)
