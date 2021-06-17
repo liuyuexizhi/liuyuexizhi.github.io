@@ -15,6 +15,8 @@ elif test "$1" = "runnew"; then
     port=$2
   fi
   rm -f src/md5sum.txt
+  rm -rf _posts/*
+  rm -rf posts_imgs/*
   bash src/format.sh
   bundle exec jekyll serve --watch --host=0.0.0.0 --port=$port
 elif test "$1" = "build"; then

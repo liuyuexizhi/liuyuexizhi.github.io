@@ -22,14 +22,10 @@ function md5_clear()
                 topath="../_posts/${thisfile}"
                 rm -fv ${topath}
             else
-                fullname=$(basename ${each})
-                arr_name=($(echo ${fullname} | tr '-' ' '))
-                img_path="../posts_imgs/$(echo ${arr_name[@]} | awk '{print $1"/"$2"/"$3}')"
-                for i in $(seq 0 3)
-                do
-                    unset arr_name[i]
-                done
-                img_name=$(echo ${arr_name[@]} | tr ' ' '-')
+                fullname=$(basename ${ff})
+                f_date=$(echo ${fullname} | awk -F '_' '{print $1}')
+                img_path="../posts_imgs/$(echo ${f_date}  | awk -F '-' '{print $1"/"$2"/"$3}')"
+                img_name=$(echo ${fullname} | awk -F '_' '{print $NF}')
                 target="${img_path}/${img_name}"
                 rm -fv ${target}
             fi
@@ -97,18 +93,36 @@ function handle_imag()
         md5_tool ${each}
         [[ $? == 0 ]] && continue
         fullname=$(basename ${each})
-        arr_name=($(echo ${fullname} | tr '-' ' '))
-        img_path="../posts_imgs/$(echo ${arr_name[@]} | awk '{print $1"/"$2"/"$3}')"
-        for i in $(seq 0 3)
-        do
-            unset arr_name[i]
-        done
-        img_name=$(echo ${arr_name[@]} | tr ' ' '-')
+        f_date=$(echo ${fullname} | awk -F '_' '{print $1}')
+        img_path="../posts_imgs/$(echo ${f_date}  | awk -F '-' '{print $1"/"$2"/"$3}')"
+        img_name=$(echo ${fullname} | awk -F '_' '{print $NF}')
         target="${img_path}/${img_name}"
 
         [[ -f ${target} ]] && rm -fv ${target}
 
         echo "=====Format[Images]:: ${fullname} ====="
+        [[ -d "${img_path}" ]] || mkdir -p ${img_path}         
+        cp -f "${each}" "${target}"
+    done
+}
+
+function handle_file()
+{
+    # 处理附件等
+    [[ -d '../posts_imgs' ]] || exit "dir[../posts_imgs] not found."
+    for each in $(find ./posts/files -type f)
+    do
+        md5_tool ${each}
+        [[ $? == 0 ]] && continue
+        fullname=$(basename ${each})
+        f_date=$(echo ${fullname} | awk -F '_' '{print $1}')
+        img_path="../posts_imgs/$(echo ${f_date}  | awk -F '-' '{print $1"/"$2"/"$3}')"
+        img_name=$(echo ${fullname} | awk -F '_' '{print $NF}')
+        target="${img_path}/${img_name}"
+
+        [[ -f ${target} ]] && rm -fv ${target}
+
+        echo "=====Format[Files]:: ${fullname} ====="
         [[ -d "${img_path}" ]] || mkdir -p ${img_path}         
         cp -f "${each}" "${target}"
     done
@@ -120,6 +134,7 @@ function main()
     md5_clear
     handle_post
     handle_imag
+    handle_file
     cd -
 }
 
