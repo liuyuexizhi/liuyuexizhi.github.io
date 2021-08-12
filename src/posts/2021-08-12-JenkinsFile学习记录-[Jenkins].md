@@ -16,6 +16,7 @@ node {
 ```
 
 > 声明式：提供更丰富的语法特性
+
 ```groovy
 pipeline {
     agent any 
@@ -66,6 +67,7 @@ ${YOUR_JENKINS_URL}/directive-generator
 
 **2. 设置环境变量**
 > 声明式：使用 environment 块，且有作用域。
+
 ```groovy
 def jenkins_agent_lable = "ue4-plugin-build-220-90"
 
@@ -95,6 +97,7 @@ pipeline {
 
 **3. 设置变量**
 > 声明式共有三种方式
+
 ```groovy
 // 第一种：直接pipeline块之上定义
 def flag = 'this is a flag'
@@ -170,6 +173,7 @@ pipeline {
 **5. 使用参数构建**
 > 使用 `parameters` 块来设置流水线需要参数传入
 > 使用 `${params.XXX}` 来引用传入的参数
+
 ```groovy
 pipeline {
     agent { label "ue4-plugin-build-220-90" }
@@ -224,6 +228,7 @@ pipeline {
 **8. 可选参数**
 > 可以省略 `()` 
 > 当调用只有一个强制参数的步骤时，可以省略参数名称
+
 ```
 git urt: 'xxxx', branch:'master'
 sh 'echo hello'
