@@ -15,3 +15,4 @@ f68f182c5c5360117f7d929ea8d41090  ./posts/2021-01-13-Prometheus监控体系探�
 799cc15821aa83d3c6808fb1cd685fbc  ./posts/imgs/2021-01-13_Prometheus监控体系探索_运维消息处理系统-功能模块.png
 6d24151bcb660495e1d63f6be23b7965  ./posts/2021-06-17-Linux性能优化-01-前言-[Linux].md
 6b5059361ed5048e8ffb37643e412b0c  ./posts/2021-06-17-Linux性能优化-02-CPU性能-[Linux].md
+b8d0cd626711d6ac2652322a6e3a7ab6  ./posts/2021-08-12-JenkinsFile学习记录-[Jenkins].md
