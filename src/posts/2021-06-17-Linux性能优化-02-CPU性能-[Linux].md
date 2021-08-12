@@ -23,6 +23,7 @@
 **2. 平均负载多少为合理？**
 > 首先需要查询到 cpu 的个数
 > 使用 `top` 命令或者查看 `/proc/cpuinfo` 文件
+
 ```shell
 grep 'model name' /proc/cpuinfo | wc -l
 ```
@@ -43,6 +44,7 @@ grep 'model name' /proc/cpuinfo | wc -l
 > + systat：包含常用的性能工具
 
 > 安装以上工具：
+
 ```shell
 yum install stress sysstat
 ```
@@ -97,6 +99,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 + b（Blocked）是处于不可中断睡眠状态的进程数
 
 > 使用 `pidstat` 查看进程状况
+
 ```shell
 # -w 选项显示上下文相关列
 pidstat -w 5 1
@@ -200,6 +203,7 @@ watch -d cat /proc/interrupts
 > 使用 `pstree` 或者 `execsnoop` 命令找到可疑进程的父进程
 
 > 备注：`ab` 工具使用
+
 ```shell
 ab
     | -c 指定请求并发数
@@ -267,6 +271,7 @@ ab
 
 **2. 案例分析思路**
 > `hping3` 模拟一个 SYN FLOOD
+
 ```shell
 # hping3 构造 TCP/IP 协议数据包
 # -S 表示设置 TCP 协议的 SYN
