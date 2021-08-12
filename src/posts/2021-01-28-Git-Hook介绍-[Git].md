@@ -1,4 +1,4 @@
-## Git hook
+``## Git hook
 两种 hook 方式
 + 客户端 hook
 + 服务器端 hook
@@ -32,7 +32,7 @@
 
 ### 服务器端 hook
 > `pre-receive`
-> 处理来自客户端的推送操作时，最先被调用的脚本是 pre-receive。
+> 处理来自客户端的推送操作时，最先被调用的脚本是 pre-receive。
 > 如果脚本非零值退出，所有的推送内容都不会被接受。
 
 > `update`

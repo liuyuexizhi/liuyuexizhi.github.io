@@ -1,4 +1,4 @@
-### 脚本式和声明式
+## 脚本式和声明式
 > 脚本式：是一种限制形式的 Groovy 语法
 
 ```groovy
@@ -40,7 +40,7 @@ pipeline {
 }
 ```
 
-### 重要参考
+## 重要参考
 
 **1. 语法指引**
 https://www.jenkins.io/zh/doc/book/pipeline/syntax/#agent
@@ -60,7 +60,7 @@ ${YOUR_JENKINS_URL}/pipeline-syntax/globals
 
 ${YOUR_JENKINS_URL}/directive-generator
 
-### 一些语法特性
+## 一些语法特性
 **1. 使用环境变量**
 > 测试在 pipeline 块以外的定义变量使用 "${env.xxx}" 为空
 > pipeline 块以内任意位置引用，使用正常
@@ -237,9 +237,9 @@ sh 'echo hello'
 **9. 并行执行**
 > `parallel` 关键字，可以并行在不同agent机器上运行
 
-### 流水线中使用容器
+## 流水线中使用容器
 > 在流水线版本 2.5 及其以后，流水线内置了与 docker 进行交互的支持
 
 
-### 扩展共享库
+## 扩展共享库
 > url：https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/
