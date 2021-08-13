@@ -210,3 +210,32 @@
   color: #447B98;
 }
 
+/********** code button css ***********/
+.div-btn > button {
+  opacity: 0;
+  color: #447B98;
+  border:solid 1px #447B98;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.div-btn:hover > button {
+  opacity: 1;
+}
+
+.div-btn > button:active,
+.div-btn > button:focus {
+  opacity: 1;
+}
+
+.div-btn {
+  text-align:right;
+  //height:12px;
+  border:dashed 1px red;
+  //background-color: #447B98;
+}
+/**************************************/
+/* 滚动条隐藏 
+div::-webkit-scrollbar {
+  width: 0;
+}*/

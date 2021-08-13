@@ -454,4 +454,32 @@ blog.addLoadEvent(function () {
 //       f_code.insertBefore(tempNode, f_table)
 //    })
 //})
+blog.addLoadEvent(function () {
+    // assets/js/post.js
+    var codeBlocks = document.querySelectorAll('pre.highlight');
+    
+    codeBlocks.forEach(function (codeBlock) {
+      // 插入 button 按钮
+      var copyButtonDiv = document.createElement('div');
+      copyButtonDiv.className = 'div-btn';
+      copyButtonDiv.innerHTML = '<button id="copy-btn" type="button" aria-label="Copy code to clipboard">Copy</button>';
+      //codeBlock.querySelector('code').append(copyButtonDiv);
+      //codeBlock.append(copyButtonDiv);
+      codeBlock.insertBefore(copyButtonDiv, codeBlock.querySelector('code'));
 
+      // 按钮添加点击事件
+      var copyButton = codeBlock.querySelector("#copy-btn");
+      copyButton.addEventListener('click', function () {
+        //var code = codeBlock.querySelector('.rouge-code').innerText.trim();
+        //window.navigator.clipboard.writeText(code);
+        const textCopied = ClipboardJS.copy(codeBlock.querySelector('.rouge-code'));
+    
+        copyButton.innerText = 'Copied';
+        var fourSeconds = 4000;
+    
+        setTimeout(function () {
+          copyButton.innerText = 'Copy';
+        }, fourSeconds);
+      });
+    });
+})
