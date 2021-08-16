@@ -1,5 +1,5 @@
 ---
-categories: [k8s,Python]
+categories: [k8s]
 title: K8sApi使用Python操作
 ---
 

@@ -28,6 +28,12 @@ elif test "$1" = "deploy"; then
   # bundle exec jekyll build --destination=dist
   git pull && git add -A && git commit -m 'auto push' && git push
   echo -e "####################################################################\n\n"
+elif test "$1" = "help"; then
+  echo -e "help:"
+  echo -e "\t1.run"
+  echo -e "\t2.runnew"
+  echo -e "\t3.build"
+  echo -e "\t4.deploy"
 else
   echo "error param"
 fi

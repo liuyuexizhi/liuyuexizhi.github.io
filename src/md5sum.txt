@@ -7,7 +7,6 @@ c54194788b2623d0501454c292b0db05  ./posts/2020-02-18-iptables策略路由-[Linux
 e8f1dd37b8e29070cc0c25118be3f965  ./posts/2020-06-01-Git-分支-[Git].md
 f68f182c5c5360117f7d929ea8d41090  ./posts/2021-01-13-Prometheus监控体系探索-[Prometheus,监控].md
 5331445f8b240c95ba30b605d2729332  ./posts/2021-01-28-Git-Hook介绍-[Git].md
-066b0ad3b5c96c407ccfe9955d611f2e  ./posts/2021-02-05-K8sApi使用Python操作-[k8s,Python].md
 2b6502df6521ca949d0e8afe72e938d8  ./posts/2020-04-21-harbor升级-[docker].md
 2b6c9f567f152c618019f043eb92188d  ./posts/2020-09-21-Jenkins扩展共享库的应用-[Jenkins].md
 6c9c1cb47416eb6ec5369d62114a27b3  ./posts/2021-06-17-Linux性能优化-01-前言-[Linux].md
@@ -16,3 +15,4 @@ f68f182c5c5360117f7d929ea8d41090  ./posts/2021-01-13-Prometheus监控体系探�
 2200d5159ec3a76aaac7094f29cfa2dc  ./posts/imgs/2021-01-13_Prometheus监控体系探索_整体架构图.png
 89565c198321d4e38647055d67483406  ./posts/imgs/2021-01-13_Prometheus监控体系探索_运维消息处理系统-功能处理流程.png
 799cc15821aa83d3c6808fb1cd685fbc  ./posts/imgs/2021-01-13_Prometheus监控体系探索_运维消息处理系统-功能模块.png
+066b0ad3b5c96c407ccfe9955d611f2e  ./posts/2021-02-05-K8sApi使用Python操作-[k8s].md
