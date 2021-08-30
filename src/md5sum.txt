@@ -1,4 +1,4 @@
-7b95cecb66fa0495016a00f39176e90e  ./posts/2020-02-18-ansible-doc模式-[ansible].md
+cbd9a11c486753fb71705970e1f4e843  ./posts/2020-02-18-ansible-doc模式-[ansible].md
 0a926de43ac762bc28149e92c69ca93d  ./posts/2020-02-18-ftp配置-[Linux].md
 c54194788b2623d0501454c292b0db05  ./posts/2020-02-18-iptables策略路由-[Linux].md
 217b37a21b1575d6fff18e8043bd458e  ./posts/2020-03-13-curl命令详解-[Linux].md

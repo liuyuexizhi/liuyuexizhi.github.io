@@ -9,26 +9,50 @@ title: ansible-doc模式
 
 {% raw %}
 
+## 文档参考  
+Inventory：[链接](https://ansible-tran.readthedocs.io/en/latest/docs/intro_inventory.html)  
+Andible配置文件：[链接](https://ansible-tran.readthedocs.io/en/latest/docs/intro_configuration.html)  
+  
+```bash  
+ansible-doc --help\  
+ansible-doc -l  
+ansible-doc ping  
+ansible-doc -t become -l  
+```  
+  
 ## 主机组  
 ### 指定用户  
 ```bash  
 ansible all -m ping  
 ansible all -m ping -u tyler  
-ansible all -m ping -u tyler --sudo  
-ansible all -m ping -u tyler --sudo --sudo-user batman  
-ansible all -m ping -u tyler -b  
+  
+# --become-method 默认使用 sudo  
+# -K, --ask-become-pass，可以在ansbile配置文件中默认开启  
+## sudo 需要输入 -u 用户的密码，-u 用户需要有 sudo 权限  
+ansible all -m ping -u tyler -b -K    # 使用 sudo 执行  
 ansible all -m ping -u tyler -b --become-user batma  
+## su 需要输入 become-user 的密码  
+ansible all -i 192.168.2.193, -u rketest -b --become-method su --become-user root -K -m shell -a "echo hahah > /tmp/test.txt"  
+  
+# -k, --ask-pass  
+# 输入 -u 用户的密码（默认 root）  
+yum -y install sshpass  
+ansible all -i 192.168.2.193, -u root -k -m shell -a "touch /tmp/test.txt"  
 ```  
+  
 ### 指定 inventory  
 ```bash  
 # 用于指定自定义hosts路径，默认/etc/ansible/hosts,也可指定逗号分隔的主机列表  
-ansible all -i ./hosts -m ping              
-ansible all -i 172.18.1.226,172.18.1.230 -m ping  
+ansible all -i ./hosts -m ping  
   
+# 指定单个主机需要加一个逗号（元祖）  
+ansible all -i 172.18.1.226, -m ping  
+ansible all -i 172.18.1.226,172.18.1.230 -m ping  
 ```  
   
 ### hosts 文件  
-```  
+  
+```bash  
 # 普通  
 [webservers]  
 mail.example.com  
@@ -50,7 +74,7 @@ www[01:50].example.com
 db-[a:f].example.com  
 ```  
   
-```  
+```bash  
 # 为每个主机指定连接类型和连接用户  
 [targets]  
 localhost ansible_connection=local  
@@ -60,7 +84,7 @@ other1.example.com ansible_connection=ssh ansible_ssh_user=mpdehaan
 other2.example.com ansible_connection=ssh ansible_ssh_user=mdehaan  
 ```  
   
-```  
+```bash  
 # 可以为每个主机单独指定一些变量，这些变量随后可以在 playbooks 中使用  
 [atlanta]  
 host1 http_port=80 maxRequestsPerChild=808  
@@ -77,7 +101,7 @@ host1
 host2  
 ```  
   
-```  
+```bash  
 [raleigh]  
 host2  
 host3  
@@ -197,7 +221,7 @@ ansible_*_interpreter=/usr/local/perl
 ```  
   
 + 取组内特定编号主机，从0开始  
-```  
+```bash  
 ]# ansible test03[0] -m ping --one-line  
 172.18.1.226 | SUCCESS => {"changed": false,"ping": "pong"}  
 ]# ansible test03[0:1] -m ping --one-line  
