@@ -1,4 +1,4 @@
-``## Git hook
+## Git hook
 两种 hook 方式
 + 客户端 hook
 + 服务器端 hook
