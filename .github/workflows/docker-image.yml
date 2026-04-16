@@ -13,11 +13,11 @@ jobs:
 
       # 2. (可选) 赋予脚本执行权限 (解决 Permission denied)
       - name: Make script executable
-        run: chmod +x ../src/format.sh
+        run: chmod +x src/format.sh
 
       # 3. 执行脚本
       - name: Run format script
-        run: ./src/format.sh
+        run: src/format.sh
 
       # 回传
       - name: Commit and push changes
