@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出代码 (必须，否则找不到脚本)
+      - uses: actions/checkout@v5
+
+      # 2. (可选) 赋予脚本执行权限 (解决 Permission denied)
+      - name: Make script executable
+        run: chmod +x ../src/format.sh
+
+      # 3. 执行脚本
+      - name: Run format script
+        run: ./src/format.sh
+
+      # 回传
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-update by GitHub Actions"
+          git push
