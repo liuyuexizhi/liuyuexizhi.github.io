@@ -17,4 +17,3 @@ f68f182c5c5360117f7d929ea8d41090  ./posts/2021-01-13-Prometheus监控体系探�
 799cc15821aa83d3c6808fb1cd685fbc  ./posts/imgs/2021-01-13_Prometheus监控体系探索_运维消息处理系统-功能模块.png
 066b0ad3b5c96c407ccfe9955d611f2e  ./posts/2021-02-05-K8sApi使用Python操作-[k8s].md
 d41d8cd98f00b204e9800998ecf8427e  ./posts/files/test.txt
-f695783f7ddf6fd4cde9fc4949b66088  ./posts/2025-09-24-k8s-source-code-learning-plan-bean-bag-generation-z1yvn67.md
